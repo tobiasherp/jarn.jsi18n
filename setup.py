@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.4-dev'
+version = '1.1'
 
 setup(name='jarn.jsi18n',
       version=version,
