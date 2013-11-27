@@ -77,8 +77,11 @@
 
             return function translate (msgid, keywords) {
                 var msgstr;
+                console.log('jarn.MessageFactory: translating msgid ...');
+                console.log(msgid);
                 if ((domain in jarn.i18n.catalogs) && (language in jarn.i18n.catalogs[domain]) && (msgid in jarn.i18n.catalogs[domain][language])) {
                     msgstr = jarn.i18n.catalogs[domain][language][msgid];
+                    console.log('jarn: msgstr is '+msgstr);
                 } else {
                     msgstr = msgid;
                 }
@@ -91,6 +94,7 @@
                         }
                     }
                 }
+                console.log('jarn: returning');
                 return msgstr;
             };
         },
@@ -99,8 +103,11 @@
             language = jarn.i18n.currentLanguage;
 
             var msgstr;
+            console.log('jarn.translate: translating msgid ...');
+            console.log(msgid);
             if ((domain in jarn.i18n.catalogs) && (language in jarn.i18n.catalogs[domain]) && (msgid in jarn.i18n.catalogs[domain][language])) {
                 msgstr = jarn.i18n.catalogs[domain][language][msgid];
+                console.log('jarn: msgstr is '+msgstr);
             } else {
                 msgstr = msgid;
             }
@@ -113,6 +120,7 @@
                     }
                 }
             }
+            console.log('jarn: returning');
             return msgstr;
         }
 
